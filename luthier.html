@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepan Demirdjian - Violine Maker</title>
+    <style>
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #0B1215;
+            color: #fff;
+        }   
+        header {
+            background-color: #0B1215;
+            color: #fff;
+            padding: 25px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        body {
+            padding-top: 80px; 
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #000;
+            border-radius: 15px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        nav ul li a:hover {
+            background-color: RGB(101, 67, 33);
+            color: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.856);
+        }
+        section {
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+        }
+        #home, #about {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+        #home {
+            background-image: url('https://olsenviolins.com/wp-content/uploads/2015/01/MG_6325.jpg');
+        }
+        #about {
+            background-image: url('https://www.madineurope.eu/wp-content/uploads/2023/06/Copy-of-Stepan-scaled.jpg');
+        }
+        #portfolio, #testimonials, #contact {
+            padding: 60px 20px;
+            background-color: #000;
+            color: #fff;
+        }
+        footer {
+            background-color: #000;
+            color: #ececec;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project {
+            display: inline-block;
+            width: 30%;
+            margin: 1.5%;
+            box-shadow: 0 0 10px #292929;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project img {
+            width: 100%;
+            display: block;
+        }
+        .project-description {
+            padding: 10px;
+        }
+        .project:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.856);
+            background-color: #292929;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #000;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: RGB(101, 67, 33);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.856);
+            transform: scale(1.2);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+        .testimonial {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #292929;
+            border-radius: 28px;
+            font-family: MV Boli, 'Times New Roman', Times, serif;
+            transition: transform 0.3s, box-shadow 0.3s;
+
+        }
+        .testimonial p {
+            margin: 5px 0;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            margin-top: 10px;
+            font-family: Arial, 'Times New Roman', Times, serif;
+                }
+        .testimonial:hover {    
+            background-color: #292929;
+            color: white;
+            transform: scale(1.02);
+            box-shadow: 0 0 12px rgba(240, 240, 240, 0.922);
+        }
+        .testimonial.larger {
+            font-size: 1.2em;
+            padding: 30px;
+            background-color: #373737;
+            border: 2px solid #555;
+            }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .project {
+                width: 45%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav ul li a {
+                padding: 10px;
+            }
+            .btn {
+                padding: 10px;
+                font-size: 16px;
+            }
+            .project {
+                width: 100%;
+                margin: 10px 0;
+            }
+            footer {
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" class="btn">Home</a></li>
+                <li><a href="#about" class="btn">About</a></li>
+                <li><a href="#portfolio" class="btn">Instruments</a></li>
+                <li><a href="#testimonials" class="btn">Testimonials</a></li>
+                <li><a href="#contact" class="btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <div class="container">
+            <h1>Stepan Demirdjian - Violin Maker</h1>
+            <a href="#portfolio" class="btn">Instruments</a>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <div class="black-box">
+                <h3>
+                    <span class="number">Over 30</span>
+                    <span class="text">years of experience in making and repairing violins, violas and bows</span>
+                </h3>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        #about {
+            position: relative; 
+        }
+        .black-box {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 20px;
+            border-radius: 25px; 
+            display: inline-block; 
+            position: absolute;
+            top: 55px; 
+            right: 20px; 
+        }
+        .number {
+            margin-right: 10px;     
+        }
+    </style>
+    
+    
+    <section id="portfolio">
+        <div class="container">
+            <h2>Instruments</h2>
+            <div class="project">
+                <img src="https://www.madineurope.eu/wp-content/uploads/2023/06/front-1-scaled-4.jpg" alt="Front view of an instrument">
+                <div class="project-description">
+                    <h3>Front View</h3>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://www.madineurope.eu/wp-content/uploads/2023/06/back-1-scaled-4.jpg" alt="Back view of an instrument">
+                <div class="project-description">
+                    <h3>Back View</h3>
+                </div>
+            </div>
+            <div class="project">
+                <img src="E:\Guarnieri_26-05-2015 Antiqued\JPG\neck.jpg" alt="Neck of an instrument">
+                <div class="project-description">
+                    <h3>Neck</h3>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://www.madineurope.eu/wp-content/uploads/2023/06/FRONT.jpg" alt="Front view of another instrument">
+                <div class="project-description">
+                    <h3>Front View</h3>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://www.madineurope.eu/wp-content/uploads/2023/06/BACK.jpg" alt="Back view of another instrument">
+                <div class="project-description">
+                    <h3>Back View</h3>
+                </div>
+            </div>
+            <div class="project">
+                <img src="https://www.madineurope.eu/wp-content/uploads/2023/06/NECK.jpg" alt="Neck of a viola">
+                <div class="project-description">
+                    <h3>Viola Neck</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <p>"I am very happy to own two Demirdjian violas, one of 408 mm and another of 420 mm. Both are fine, responsive instruments which I have used in orchestral work and in chamber music. Stepan's craftsmanship is of the highest order, they are also beautiful to look at. Stepan is a delight to work with, even by email at long distance, and he does his best to fulfill all his clients' wishes."</p>
+                <p class="testimonial-author">- R.C. MacDonald, Concertmaster, Fredericton Chamber Orchestra, Violist, Symphony New Brunswick, Canada, Instructor, University of New Brunswick Conservatory of Music</p>
+            </div>
+            <div class="testimonial">
+                <p>"I am very pleased with the viola that you made for me. I play with the Nashua Chamber Orchestra, in Nashua, New Hampshire. There are currently four other violists, who all love the tone quality and lovely sounds that my viola makes. It meets my physical requirements (small hands, short arms, light weight) and has alleviated most of my problems in getting correct intonations. The wait was not excessive for a hand-made instrument, and it arrived in excellent condition, needing only to have the sound-post put in. The luthier who did this for me also admired the quality of the instrument, not only the sound, but the woodworking as well. It is a beautiful instrument! I am pleased to recommend you to anyone who wants a superior instrument at a very reasonable price."</p>
+                <p class="testimonial-author">- Abigail Beutler, Violist - Nashua Chamber Orchestra, Nashua, New Hampshire, USA</p>
+            </div>
+            <div class="testimonial">
+                <p>"Stepan -- your 2002 Del Gesu copy easily matches if not outright best violins. In the 6 years that I have been playing it, it has opened up. As a new violin, it sounds 'new' to the player and to anybody 5-10 feet away, but from 20 feet or more away, it takes on another character. I am always amazed by this as I walk backwards... it becomes big, wide, and dark, and very smooth."</p>
+                <p class="testimonial-author">- Tommy Kuo, Violinist, Redwood Symphony Orchestra, Redwood City, California</p>
+            </div>
+            <div class="testimonial">
+                <p>"Over the years I have commissioned three instruments from Stepan, two violins and a viola. I have been very pleased with each of them. They sound wonderful and the workmanship is excellent. Despite the many miles between Plovdiv and the USA, Stepan is great to deal with. I do not hesitate to give him my high recommendation. Please feel free to contact me if you have questions."</p>
+                <p class="testimonial-author">- Jim Del Duca, Bozeman, Montana</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Contact me through email or social media.</p>
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSKkVJxgTsxLtpQTDcqqtJhKpZbSTGPTsWhcvBPgcXfpKfLmTMwRNgQtwMnJLtdXfbpXXBjw" class="btn">Email Me</a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/stepandemirdjian/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/stepan.demirdjian.9?locale=bg_BG" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a>
+                    <a href="https://www.google.com/maps/place/%D0%A6%D0%B5%D0%BD%D1%82%D1%8A%D1%80%D0%9F%D0%BB%D0%BE%D0%B2%D0%B4%D0%B8%D0%B2+%D0%A6%D0%B5%D0%BD%D1%82%D1%8A%D1%80,+%D0%B1%D1%83%D0%BB.+%E2%80%9E%D0%A0%D1%83%D1%81%D0%BA%D0%B8%E2%80%9C+99,+4000+%D0%9F%D0%BB%D0%BE%D0%B2%D0%B4%D0%B8%D0%B2/@42.1430517,24.7390273,17z/data=!3m1!4b1!4m6!3m5!1s0x14acd1b7704babff:0xdb052f8a723d521a!8m2!3d42.1430478!4d24.7416022!16s%2Fg%2F11c20ygkkn?entry=ttu" target="_blank">
+                        <img src="https://seeklogo.com/images/N/new-google-maps-icon-logo-263A01C734-seeklogo.com.png" alt="Map">
+                </a>
+            </div>
+            <p>tel: 0898343582</p>  
+            <p>address: Руски №99</p>
+        </div>
+    </section>
+</body>
+
+
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepan Demirdjian - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #0B1215;
+            color: #fff;
+        }
+        header {
+            background-color: #0B1215;
+            color: #fff;
+            padding: 25px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        body {
+            padding-top: 80px; 
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #000;
+            border-radius: 15px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        nav ul li a:hover {
+            background-color: RGB(101, 67, 33);
+            color: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.856);
+        }
+        section {
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+        }
+        #home, #about {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+        #home {
+            background-image: url('https://olsenviolins.com/wp-content/uploads/2015/01/MG_6325.jpg');
+        }
+        #about {
+            background-image: url('https://www.madineurope.eu/wp-content/uploads/2023/06/Copy-of-Stepan-scaled.jpg');
+        }
+        footer {
+            background-color: #000;
+            color: #ececec;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #clock {
+            font-size: 24px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            background-color: #292929;
+            margin-top: 10px;
+        }
+        footer {
+            height: 80px;
+             padding-top: 0px;
+            }
+
+
+    </style>
+</head>
+<body>
+       
+    <footer>
+        <p>tel: 0898343582 | address: Руски №99</p>
+        <div id="clock"></div>
+    </footer>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; 
+            hours = ('0' + hours).slice(-2);
+            minutes = ('0' + minutes).slice(-2);
+            seconds = ('0' + seconds).slice(-2);
+          
+            var clockDisplay = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+            document.getElementById('clock').innerText = clockDisplay;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
